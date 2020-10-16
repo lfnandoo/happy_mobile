@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
@@ -9,10 +8,26 @@ import {
 } from "react-native";
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from "react-native-maps";
 import { Feather } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
+import {
+  Nunito_600SemiBold,
+  Nunito_700Bold,
+  Nunito_800ExtraBold
+} from "@expo-google-fonts/nunito";
 
 import mapMarker from "./src/images/map_marker.png";
 
 export default function App() {
+  const [fontsLoad] = useFonts({
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold
+  });
+
+  if (!fontsLoad) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <MapView
@@ -74,7 +89,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: "rgba(255, 255, 255, .8)",
     justifyContent: "center",
-    borderRadius: 10
+    borderRadius: 10,
+    fontFamily: "Nunito_700Bold"
   },
 
   calloutText: {
@@ -101,6 +117,7 @@ const styles = StyleSheet.create({
   },
 
   footerText: {
+    fontFamily: "Nunito_700Bold",
     color: "#8fa7b3"
   },
 
