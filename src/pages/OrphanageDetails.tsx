@@ -10,7 +10,7 @@ import {
 import MapView, { Marker } from "react-native-maps";
 import { Feather, FontAwesome } from "@expo/vector-icons";
 
-import mapMarkerImg from "../images/map-marker.png";
+import mapMarker from "../images/map_marker.png";
 import { RectButton } from "react-native-gesture-handler";
 
 export default function OrphanageDetails() {
@@ -61,7 +61,7 @@ export default function OrphanageDetails() {
             style={styles.mapStyle}
           >
             <Marker
-              icon={mapMarkerImg}
+              icon={mapMarker}
               coordinate={{
                 latitude: -27.2092052,
                 longitude: -49.6401092
